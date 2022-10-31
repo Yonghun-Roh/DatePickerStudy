@@ -38,8 +38,14 @@ class ViewController: UIViewController {
         
     }
     @objc func updateTime() {
-        lblCurrentTime.text = String(count)
-        count = count + 1
+//        lblCurrentTime.text = String(count)
+//        count = count + 1
+        
+        let date = NSDate()
+        
+        let formater = DateFormatter()
+        formater.dateFormat = "yyyy-MM-dd HH:mm:ss EEE"
+        lblCurrentTime.text = "현재시간: " + formater.string(from: date as Date)
     }
     
 }
